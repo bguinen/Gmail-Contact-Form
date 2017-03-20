@@ -1,2 +1,5 @@
 # Gmail-Contact-Form
-An html form that uses jQuery form and validate plugins for client side validation and PHP sanitation before sending an email via PHPmailer 
+
+Very basic HTML contact form that uses Ajax and jQuery plugins to do client side verification and provide immediate feedback. Then sends form data to a php script that sanitizes data and uses PHPmailer and Gmail to send that form data as an email. 
+
+It should be noted that client side verification can be sidestepped entirely. If you intend to send confidential data you should also validate information on the server side.
