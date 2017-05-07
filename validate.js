@@ -2,15 +2,14 @@ $.validator.addMethod("lettersonly", function(value, element){
     return this.optional(element) || /^[a-z]+$/i.test(value);
 });
 //check out https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js for additional validation methods
-$(function(){
+$(document).ready(function() {
 	//form submit success/failure message	
 	var feedback    = $('#feedback'),
 		feedbackDiv = feedback.find('span');
 		
 	function showFeedback(message, attr) {
 		feedbackDiv.text(message),
-		feedbackDiv.attr('class', attr);
-		feedbackDiv.delay(3000).fadeOut('slow');
+		feedbackDiv.attr('class', attr);		
 	}
 	
 	//Visit https://jqueryvalidation.org/ for more examples of the validate execution
@@ -60,8 +59,7 @@ $(function(){
 				},
 				success:function() {
 					showFeedback('Thank you for your message, we will get back to you as soon as possible.','success');
-					form.reset();
-					tailbar.delay(1000).slideToggle('slow');
+					form.reset();					
 				},
 				error:function(){
 					showFeedback('Sorry there was an unexpected error and your message was not sent. Please try again later.','failure');
